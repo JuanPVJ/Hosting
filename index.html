@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Slenderman Shooter</title>
+    <script src="https://aframe.io/releases/1.5.0/aframe.min.js"></script>
+    <script src="app.js"></script>
+</head>
+
+<body>
+    <a-scene>
+
+        <!-- CARGAMOS ASSETS -->
+        <a-assets>
+            <img src="assets/bosque.jpg" id="sky">
+            <audio src="assets/sonido-disparo.mp3" id="shot-sound"></audio>
+            <img src="assets/game_over.png" id="game-over">
+            <img src="assets/you_win.png" id="you-win">
+            <a-asset-item id="slenderman" src="assets/slenderman/scene.gltf"></a-asset-item>
+            <a-asset-item id="shotgun" src="assets/shotgun/scene.gltf"></a-asset-item>
+            <a-asset-item id="tree" src="assets/arbol/scene.gltf"></a-asset-item>
+            <a-asset-item id="boss" src="assets/boss/scene.gltf"></a-asset-item>
+        </a-assets>
+
+        <!-- ENTORNO -->
+        <a-sky src="#sky"></a-sky>
+
+        <!-- ÁRBOLES -->
+        <a-entity gltf-model="#tree" position="-22 -3 0" scale="4 8 4"></a-entity>
+        <a-entity gltf-model="#tree" position="5 -3 -10" scale="4 8 4"></a-entity>
+        <a-entity gltf-model="#tree" position="-8 -3 -11" scale="4 8 4"></a-entity>
+        <a-entity gltf-model="#tree" position="14 -3 -19" scale="4 8 4"></a-entity>
+        <a-entity gltf-model="#tree" position="17 -3 4" scale="4 8 4"></a-entity>
+        <a-entity gltf-model="#tree" position="-0.5 -3 12" scale="4 8 4"></a-entity>
+        <a-entity gltf-model="#tree" position="-6 -3 6" scale="4 8 4"></a-entity>
+        <a-entity gltf-model="#tree" position="8 -3 8" scale="4 8 4"></a-entity>
+
+        <!-- SLENDERMANS -->
+        <a-entity id="slenderman-container"></a-entity>
+
+        <!-- CÁMARA -->
+        <a-entity camera look-controls>
+            <!-- Escopeta conectada a la cámara -->
+            <a-entity id="shotgun-holder" gltf-model="#shotgun" position="1 -0.5 -0.8" scale="1.5 1.5 1.5" rotation="0 290 0"></a-entity>
+            <a-text id="score-text" value="0 SLENDERMAN ELIMINADOS" color="white" position="0 -0.1 -1" width="2" align="center"></a-text>
+            <a-entity cursor="fuse: true; fuseTimeout: 100" position="0 0 -1" raycaster="objects: .slenderman, .boss"
+                geometry="primitive: ring; radiusInner: 0.02; radiusOuter: 0.03" material="shader: flat"></a-entity>
+        </a-entity>
+
+    </a-scene>
+</body>
+
+</html>
