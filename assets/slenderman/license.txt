@@ -1,0 +1,11 @@
+Model Information:
+* title:	slenderman animated
+* source:	https://sketchfab.com/3d-models/slenderman-animated-c64b2587728c4e90bd73a38f1666f76b
+* author:	vicente betoret ferrero (https://sketchfab.com/deathcow)
+
+Model License:
+* license type:	CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+* requirements:	Author must be credited. Commercial use is allowed.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "slenderman animated" (https://sketchfab.com/3d-models/slenderman-animated-c64b2587728c4e90bd73a38f1666f76b) by vicente betoret ferrero (https://sketchfab.com/deathcow) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
