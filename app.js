@@ -13,6 +13,7 @@ let score = 0;
 let bossHits = 0;
 let boss = null;
 let bossInterval = null;
+let gameOverState = false;  // Variable para verificar si el juego está en estado final
 
 function initScene() {
     const container = document.querySelector('#slenderman-container');
@@ -52,6 +53,8 @@ function initScene() {
     AFRAME.registerComponent('shootable', {
         init: function () {
             this.el.addEventListener('click', () => {
+                if (gameOverState) return; // Si el juego terminó, no se puede disparar
+
                 if (this.el.classList.contains('boss')) {
                     bossHits++;
                     updateBossHits();
@@ -106,6 +109,7 @@ function spawnBoss() {
 }
 
 function gameOver() {
+    gameOverState = true; // Marcar que el juego ha terminado
     const scene = document.querySelector('a-scene');
     const gameOverImg = document.createElement('a-image');
     gameOverImg.setAttribute('src', '#game-over');
@@ -114,6 +118,7 @@ function gameOver() {
 }
 
 function victory() {
+    gameOverState = true; // Marcar que el juego ha terminado
     clearInterval(bossInterval); // Detener el movimiento del boss al ganar
     const scene = document.querySelector('a-scene');
     const winImg = document.createElement('a-image');
